@@ -28,7 +28,7 @@ export const App = () => {
   };
 
   useEffect(() => {
-    if (searchWord.trim() === '') {
+    if (!searchWord) {
       return;
     }
     setLoading(true);

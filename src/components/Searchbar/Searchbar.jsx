@@ -15,11 +15,12 @@ export const Searchbar = ({ onSubmit }) => {
 
   const handleFormSubmit = event => {
     event.preventDefault();
-    if (keyWord.trim() === '') {
+    const query = keyWord.trim().toLocaleLowerCase();
+    if (query === '') {
       Notiflix.Notify.info('Please enter something');
       return;
     }
-    onSubmit(keyWord);
+    onSubmit(query);
 
     event.currentTarget.reset();
   };
